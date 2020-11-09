@@ -1,0 +1,24 @@
+Visual Studio Code:
+Extensions:
+HTML Boilerplate
+vscode-icons
+ES7 React/Redux/React-Native/JS snippets
+Babel JavaScript
+Babel ES6/ES7
+webpack
+Prettier - Code formatter
+
+Node JS
+
+JavaScript:
+prototype based programming
+new features in JS/ES (ECMAScript)
+
+React JS Taining:
+
+a. How to create a React JS app without any tool
+b. How to create react app with a tool (create-react-app)
+
+React JS Concepts
+
+Case Study
