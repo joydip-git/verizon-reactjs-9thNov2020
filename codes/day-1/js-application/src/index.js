@@ -3,6 +3,12 @@
 // const hr = require('./hr')
 // const print = require('./printSalary')
 import { add as addFn } from './employee'
+/**
+ * {
+ * employee:employee,
+ * add:add
+ * }
+ */
 import { developer } from './developer'
 import hr from './hr'
 import print from './printSalary'
@@ -23,15 +29,16 @@ console.log(addFn(10, 20))
 // joy.hraPayment = 2340;
 // joy.incentivePayment = 1200;
 
-// var anil = {
-//     name: 'anil',
-//     id: 1,
-//     age: 20
-// }
+var anil = {
+    name: 'anil',
+    id: 1,
+    age: 20
+}
 //object destructuring
-//const { name } = anil;
+const { name, id, age } = anil;
 // const name = anil.name;
 // const id = anil.id;
 // const age = anil.age;
+console.log(name, id, age)
 
 
