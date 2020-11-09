@@ -13,6 +13,10 @@ Node JS
 JavaScript:
 prototype based programming
 new features in JS/ES (ECMAScript)
+ES5 (<2015)
+ES6: class, constructor, super, extends, arrow operator, const, spread operator
+
+TypeScript
 
 React JS Taining:
 
