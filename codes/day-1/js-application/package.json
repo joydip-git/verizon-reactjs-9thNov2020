@@ -1,0 +1,13 @@
+{
+  "name": "js-application",
+  "version": "1.0.0",
+  "description": "simepl js app",
+  "main": "./src/index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

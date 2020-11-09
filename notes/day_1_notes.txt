@@ -15,6 +15,7 @@ prototype based programming
 new features in JS/ES (ECMAScript)
 ES5 (<2015)
 ES6: class, constructor, super, extends, arrow operator, const, spread operator
+ES6 module format (ESNext)
 
 TypeScript
 
@@ -26,3 +27,20 @@ b. How to create react app with a tool (create-react-app)
 React JS Concepts
 
 Case Study
+
+
+Node JS:server side framework
+JS code get it executed standalone
+
+Node runtime
+runs on powerful JS engine: v8 (JS-->c++)
+
+module:
+Node JS
+
+export
+import
+
+define your module:formats:
+Common JS, Asynchronous Module Definition, Universal Module Definition, System JS, ES6 module format...
+
