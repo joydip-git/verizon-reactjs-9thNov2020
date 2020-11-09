@@ -44,3 +44,9 @@ import
 define your module:formats:
 Common JS, Asynchronous Module Definition, Universal Module Definition, System JS, ES6 module format...
 
+ES6 code and modules --> older version of JS (ES5,ES3,ES2...)
+transpiler: New version of code/module --> older version code
+Babel (JS trans-compiler)
+Typescript compiler (TS code)
+
+module loader

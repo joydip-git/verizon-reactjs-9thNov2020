@@ -3,11 +3,21 @@
   "version": "1.0.0",
   "description": "simepl js app",
   "main": "./src/index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "run:dev": "lite-server --watch --baseDir=dist",
+    "start": "concurrently \"npm run build\" \"npm run run:dev\" "
+  },
   "keywords": [],
   "author": "joydip",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-modules-amd": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "concurrently": "^5.3.0",
     "lite-server": "^2.5.4"
   }
 }

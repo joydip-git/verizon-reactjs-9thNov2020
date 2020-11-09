@@ -7,6 +7,7 @@ export class employee {
         this._hraPayment = hrapay;
     }
 
+
     get name() {
         return this._name;
     }
