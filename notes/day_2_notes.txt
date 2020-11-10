@@ -63,3 +63,5 @@ create-react-app react-props-state-demo
 
 npx create-react-app react-props-state-demo
 
+create-react-app --> app (react-scripts)
+
