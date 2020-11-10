@@ -65,3 +65,27 @@ npx create-react-app react-props-state-demo
 
 create-react-app --> app (react-scripts)
 
+types: functional and class component
+1. props (pass data from one component to another)
+2. binding (data and event)
+3. state (maintain data inside a component), state updation etc...
+4. list and key
+5. ref
+6. lifecycle events and methods (lifecycle hooks)
+7. error handling
+8. styles
+9. hoc and render prop
+10. react hooks (APIs)
+11. http request
+12. routing
+13. maintain state for an entire application: Redux, react with Redux, thunk and saga
+14. dockerize and host the docker container in Azure
+
+case study: product management system
+
+DI, flow or TypeScript
+
+Dynamic Property Checking: using prop-types
+npm i prop-types --save-dev
+
+
