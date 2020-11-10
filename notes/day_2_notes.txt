@@ -85,7 +85,11 @@ case study: product management system
 
 DI, flow or TypeScript
 
+Diffing algorithm
+
 Dynamic Property Checking: using prop-types
 npm i prop-types --save-dev
+
+
 
 

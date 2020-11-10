@@ -21,13 +21,30 @@ const multiplyByTwo = (number, index) => {
     return design;
 }
 
+/**
+ * {
+     msg:'Welcome to React JS',
+     messageValue: undefined,
+     numberValue: 20,
+     numbers: undefined,
+     objValue: undefined
+ * }
+ */
+
 const Welcome = (args) => {
-    const { messageValue, numberValue, objValue, numbers, msg } = args;
+    //args.numberValue = args.numberValue + 1;
+    console.log('Welcome rendered')
+    const { messageValue, numberValue, objValue, numbers, msg, changeHandler } = args;
     return (
         <span id='msgSapn'>
             {messageValue}
             <br />
-            {numberValue}
+            <input
+                type='text'
+                value={numberValue}
+                onChange={(event) => changeHandler(parseInt(event.target.value))}
+            />
+            
             <br />
             {objValue.name}
             <br />
@@ -42,6 +59,25 @@ Welcome.propTypes = {
     messageValue: PropTypes.string.isRequired,
     numberValue: PropTypes.number.isRequired,
     numbers: PropTypes.array,
-    objValue: PropTypes.object
+    objValue: PropTypes.object,
+    changeHandler: PropTypes.func.isRequired
 }
 export default Welcome;
+
+/**
+ * {
+ *   key:null,
+ *   ref:null,
+ *   type:'span',
+ *   props:{
+ *      msg:'Welcome to React JS',
+        messageValue: undefined,
+        numberValue: undefined,
+        numbers: undefined,
+        objValue: undefined,
+        id:,
+        style:
+        className:
+ *   }
+ * }
+ */
