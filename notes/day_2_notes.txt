@@ -1,0 +1,65 @@
+Application
+a. code and design
+b. artifacts (compiler/transpiler, confiuration, modules, packages, dev server,...)
+
+
+React JS philosophy:
+Create components: 
+split up your entire app design+code into multiple components
+then group all of them in the root container component
+pass this complete app design to render() method of React DOM
+
+Component:
+Keep your design and data and logic to manipulate data and accordingly recreate the design together
+
+
+Packages:
+a. React packages
+react, react-dom
+command: npm i react react-dom --save
+
+b. Babel packages
+1. ES6 code and module --> older version (@babel/preset-env)
+2. React JSX code -------> JavaScript (older JS) (@babel/preset-react)
+
+Core packages: @babel/core 
+ClI package: @babel/cli
+
+command: npm i @babel/core @babel/cli --save
+
+Preset packages: @babel/preset-env, @babel/preset-react
+command: npm i @babel/preset-env @babel/preset-react --save
+
+c. bundler packages: [webpack]
+core: webpack
+cli: webpack-cli
+plugins: html-webpack-plugin, clean-webpack-plugin
+
+npm i webpack webpack-cli --save-dev
+npm i html-webpack-plugin clean-webpack-plugin --save-dev
+
+e. loader packages for webpack:
+a. babel: babel-loader
+b. html: html-loader
+c. css: css-loader, style-loader
+d. images: file-loader
+e. xml files: xml-loader
+f. csv files: csv-loader
+
+npm i babel-loader html-loader css-loader style-loader file-loader xml-loader csv-loader --save-dev
+
+e. app dev server:[webpack dev server]
+core: webpack-dev-server
+npm i webpack-dev-server --save-dev
+
+
+npm i webpack webpack-cli --save-dev
+npm i html-webpack-plugin clean-webpack-plugin --save-dev
+npm i babel-loader html-loader css-loader style-loader file-loader xml-loader csv-loader --save-dev
+npm i webpack-dev-server --save-dev
+
+npm i create-react-app -g
+create-react-app react-props-state-demo
+
+npx create-react-app react-props-state-demo
+
