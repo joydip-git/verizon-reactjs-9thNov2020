@@ -28,14 +28,13 @@ class Person extends Component {
         console.log('[Person] should update?')
         console.log(newProps)
         console.log(this.props)
-        if (this.state.personData === null) {
-            return true
-        } else if (newProps.personId !== this.props.personId && this.state.personData.id !== this.props.personId) {
-            return true;
-        } else {
+        if (this.state.personData !== null && (this.state.personData.id === this.props.personId && this.props.personId === newProps.personId)) {
             return false;
         }
+        else
+            return true;
     }
+
     componentDidMount() {
         console.log('[Person] mounted')
         this.getAndSetData();
