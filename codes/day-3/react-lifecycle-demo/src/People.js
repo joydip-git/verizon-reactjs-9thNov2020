@@ -6,28 +6,23 @@ import PropTypes from 'prop-types'
  */
 const People = (args) => {
     console.log('[People] rendered/mounting')
-    const { person } = args;
+    const { person, selectPersonHandler } = args;
     const style = {
         border: '1px solid blue',
         width: '250px',
         borderRadius: '5px'
     }
     let design = (
-        <div style={style}>
-            Name:&nbsp;
-            <input type='text' value={person.name} />
-            <br />
-        Age:&nbsp;
-            <input type='text' value={person.age} />
-            <br />
-            <br />
+        <div style={style} onClick={() => selectPersonHandler(person.id)}>
+            <span>{person.name}</span>
         </div>
     )
     return design;
 }
 
 People.propTypes = {
-    person: PropTypes.object.isRequired
+    person: PropTypes.object.isRequired,
+    selectPersonHandler: PropTypes.func.isRequired
 }
 
 export default People

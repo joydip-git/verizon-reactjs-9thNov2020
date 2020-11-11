@@ -1,14 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { getPeople } from './data/peopleData';
 import People from './People';
+import Person from './Person';
 
 export default class PersonList extends Component {
     constructor() {
         super()
         console.log('[PL] created');
         this.state = {
-            people: []
+            people: [],
+            selectedPersonId: 0
         }
+    }
+    updatePersonIdHandler = (personId) => {
+        this.setState({
+            selectedPersonId: personId
+        })
     }
     componentDidMount() {
         console.log('[PL] mounted')
@@ -20,23 +27,28 @@ export default class PersonList extends Component {
     componentWillUnmount() {
         console.log('[PL] unmounted')
     }
-    render() {        
+    render() {
         console.log('[PL] rendered')
         let design = null;
         if (this.state.people !== []) {
             design = (
-                <div>
-                    {
-                        this.state.people.map(p => {
-                            return <People person={p} key={p.id} />
-                        })
-                    }
-                </div>
+                <>
+                    {/*<Fragment>*/}
+                    <div>
+                        {
+                            this.state.people.map(p => {
+                                return <People person={p} key={p.id} selectPersonHandler={this.updatePersonIdHandler} />
+                            })
+                        }
+                    </div>
+
+                    {/*</Fragment >*/}
+                </>
+        
             );
         } else {
             design = <span>Loading...</span>
         }
-
         return design;
     }
 }
