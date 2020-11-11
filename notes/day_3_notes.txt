@@ -42,3 +42,40 @@ http://127.0.0.1:8081/productservice/100 (HTTP-DELETE)
 }
 
 
+Lifecycle: (object of class component, NOT about React element)
+
+1. creation and mounting
+   a. constructor: during object creation
+      1. initialize the state
+      2. bind functions to the current context
+     
+     class PL extends Component{
+     constructor(){
+	super()
+       //this.callHandler = this.callHandler.bind(this); 
+       //this.state = {}
+     }
+     state={}
+     //callHandler(){}
+     callHandler=()=>{}
+     }
+     NOTE: no side-effect causing code: network request, API calls to RESTful application
+
+   b. 
+   c. render: it is followed by ctor call (first time) or every state update
+      causes VDOM to be created/re-craeted
+      it gets called everytime state is updated
+      NOTE: no side-effect causing code: network request, API calls to RESTful application
+
+   d. componentDidMount
+      when the VDOM (specific element) gets loaded into ADOM (actually HTML elements are created based on React element in ADOM)
+      called ONLY one time in a lifecycle of a component instance
+      NOTE: side-effect causing code: network request, API calls to RESTful application can be written
+
+2. updation
+3. desctruction
+   a. componentWillUnmount
+4. error
+
+
+
