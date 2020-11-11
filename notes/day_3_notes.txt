@@ -73,6 +73,19 @@ Lifecycle: (object of class component, NOT about React element)
       NOTE: side-effect causing code: network request, API calls to RESTful application can be written
 
 2. updation
+   a. 
+   b. shouldComponentUpdate(newProps,currentState):
+    gets executed second time onwards (NOT the first time)
+    return true/false;
+    this gets the latest props first. if the func returns true, then component instance gets the latest props
+   USE IT TO STOP UNNECESSARY RENDERING OF CLASS COMPONENT REACT ELEMENT
+   NOTE: no side-effect causing code: network request, API calls to RESTful application
+
+
+   c. render
+   d. componentDidUpdate(oldProps,currentState): gets executed second time onwards (NOT the first time)
+   NOTE: side-effect causing code: network request, API calls to RESTful application can be written
+
 3. desctruction
    a. componentWillUnmount
 4. error

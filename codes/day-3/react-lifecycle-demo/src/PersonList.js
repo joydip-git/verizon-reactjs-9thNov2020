@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { getPeople } from './data/peopleData';
+import { getPeople, updatePeople } from './data/peopleData';
 import People from './People';
 import Person from './Person';
 
@@ -12,6 +12,22 @@ export default class PersonList extends Component {
             selectedPersonId: 0
         }
     }
+    updatePersonHandler = (personId, propertyName, newPropertyValue) => {
+        let copyOfPeople = [...this.state.people]
+        let foundPerson = copyOfPeople.find(p => p.id === personId);
+        if (foundPerson) {
+            let foundPersonIndex = copyOfPeople.findIndex(p => p.id === personId)
+
+            let copyOfFoundPerson = { ...foundPerson };
+            copyOfFoundPerson[propertyName] = newPropertyValue;
+            copyOfPeople[foundPersonIndex] = copyOfFoundPerson;
+
+            updatePeople(copyOfPeople);
+            this.setState({
+                people: copyOfPeople
+            })
+        }
+    }
     updatePersonIdHandler = (personId) => {
         this.setState({
             selectedPersonId: personId
@@ -22,33 +38,21 @@ export default class PersonList extends Component {
         let arr = getPeople()
         this.setState({
             people: arr
-        })
+        });
     }
     componentWillUnmount() {
         console.log('[PL] unmounted')
     }
     render() {
         console.log('[PL] rendered')
-        let design = null;
-        if (this.state.people !== []) {
-            design = (
-                <>
-                    {/*<Fragment>*/}
-                    <div>
-                        {
-                            this.state.people.map(p => {
-                                return <People person={p} key={p.id} selectPersonHandler={this.updatePersonIdHandler} />
-                            })
-                        }
-                    </div>
-
-                    {/*</Fragment >*/}
-                </>
-        
-            );
-        } else {
-            design = <span>Loading...</span>
-        }
-        return design;
+        return (
+            <div>
+                {
+                    this.state.people !== [] ? (this.state.people.map(p =>
+                        <People person={p} selectPersonHandler={this.updatePersonIdHandler} key={p.id} />)) : <span>Loading...</span>
+                }
+                <Person personId={this.state.selectedPersonId} updateHandler={this.updatePersonHandler} />
+            </div>
+        );
     }
 }
