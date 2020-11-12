@@ -1,8 +1,8 @@
-import { Component } from "react"
+import { Component, PureComponent } from "react"
 import PropTypes from 'prop-types'
 import { getPerson } from "./data/peopleData";
 
-class Person extends Component {
+class Person extends PureComponent {
 
     constructor() {
         super()
@@ -24,28 +24,43 @@ class Person extends Component {
             })
         }
     }
+    /*
     shouldComponentUpdate(newProps, currentState) {
         console.log('[Person] should update?')
         console.log(newProps)
         console.log(this.props)
+        //this.props.personId===newProps.personId --> false/true
+        //this.
         if (this.state.personData !== null && (this.state.personData.id === this.props.personId && this.props.personId === newProps.personId)) {
             return false;
         }
         else
             return true;
     }
-
+*/
+    static getDerivedStateFromProps(newProps, currentState) {
+        console.log('[Person] getDerivedStateFromProps')
+        return {};
+    }
     componentDidMount() {
         console.log('[Person] mounted')
         this.getAndSetData();
     }
-    componentDidUpdate(oldProps, currentState) {
+    getSnapshotBeforeUpdate(oldProps, currentState) {
+        console.log('[Person] getSnapshotBeforeUpdate')
+        return 'hello..';
+    }
+    componentDidUpdate(oldProps, currentState, snapshot) {
+        console.log(snapshot)
         console.log('[Person] update')
         // console.log(this.props)
         // console.log(oldProps)
         if (this.props.personId !== oldProps.personId) {
             this.getAndSetData()
         }
+    }
+    componentWillUnmount() {
+        console.log('[Person] unmounted')
     }
     render() {
         console.log('[Person] rendered')

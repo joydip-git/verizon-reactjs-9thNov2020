@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 /**
  * 
  * args:{person:{}}
  */
+// const OriginalPeople = (args) => {
 const People = (args) => {
     console.log('[People] rendered/mounting')
     const { person, selectPersonHandler } = args;
@@ -20,9 +21,15 @@ const People = (args) => {
     return design;
 }
 
+// OriginalPeople.propTypes = {
+//     person: PropTypes.object.isRequired,
+//     selectPersonHandler: PropTypes.func.isRequired
+// }
 People.propTypes = {
     person: PropTypes.object.isRequired,
     selectPersonHandler: PropTypes.func.isRequired
 }
 
-export default People
+// const People = memo(OriginalPeople);
+//export default People
+export default memo(People);
