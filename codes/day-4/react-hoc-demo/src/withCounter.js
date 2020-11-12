@@ -1,3 +1,4 @@
+//import { object } from "prop-types";
 import { Component } from "react";
 
 const withCounter = (OriginalComponent, initialState) => {
@@ -14,6 +15,18 @@ const withCounter = (OriginalComponent, initialState) => {
         //         count: initialState
         //     }
         // }
+        // shouldComponentUpdate(newProps, oldState) {
+        //     // console.log('shouldComponentUpdate')
+        //     // console.log(newProps)
+        //     // console.log(this.props)
+        //     for (const propName in newProps) {
+        //         if (this.props[propName] === newProps[propName]) {
+        //             return false;
+        //         } else {
+        //             return true;
+        //         }
+        //     }
+        // }
         increaseCountHandler = () => {
             this.setState(ps => {
                 return {
@@ -22,10 +35,12 @@ const withCounter = (OriginalComponent, initialState) => {
             })
         }
         render() {
-            return <OriginalComponent countValue={this.state.count} countHandlerFn={this.increaseCountHandler} />
+            // console.log(this.props.data)
+            // console.log(this.props.value)
+            // const derivedProps = { ...this.props }
+            return <OriginalComponent countValue={this.state.count} countHandlerFn={this.increaseCountHandler} {...this.props} />
         }
     }
-
     return WithCounter;
 }
 export default withCounter;

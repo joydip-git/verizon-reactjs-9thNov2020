@@ -2,9 +2,11 @@ import React from 'react'
 //import PropTypes from 'prop-types'
 import withCounter from './withCounter'
 
-function OriginalClickCounter({ countValue, countHandlerFn }) {
+function OriginalClickCounter({ countValue, countHandlerFn, data }) {
     return (
         <div>
+            Data Value:&nbsp;{data}
+            <br />
             Click Counter Value:&nbsp;{countValue}
             <br />
             <button onClick={countHandlerFn}>Increase By Clicking</button>

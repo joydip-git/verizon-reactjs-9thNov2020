@@ -2,6 +2,7 @@
 import './App.css';
 import ClickCounter from './ClickCounter';
 import Counter from './Counter';
+import Hero from './Hero';
 import HoverCounter from './HoverCounter';
 /*
 const common = {
@@ -24,10 +25,13 @@ const App = () => {
   return (
     <div>
       {/* <Counter /> */}
-      <ClickCounter />
+      <ClickCounter data={100} />
       <br />
       <br />
-      <HoverCounter />
+      <HoverCounter value={200} />
+      <br />
+      <br />
+      <Hero heroName='Joker' loggerFn={(errorObj) => console.log(errorObj)} />
     </div>
   )
 }
