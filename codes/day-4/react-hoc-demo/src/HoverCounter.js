@@ -1,6 +1,7 @@
 import React from 'react'
 //import PropTypes from 'prop-types'
 import withCounter from './withCounter'
+import withErrorBoundary from './withErrorBoundary'
 
 function HoverCounter({ countValue, countHandlerFn, value }) {
     return (
@@ -17,4 +18,4 @@ function HoverCounter({ countValue, countHandlerFn, value }) {
 //     count: PropTypes.number.isRequired,
 //     countHandler: PropTypes.func.isRequired
 // }
-export default withCounter(HoverCounter, 20);
+export default withErrorBoundary(withCounter(HoverCounter, 20));

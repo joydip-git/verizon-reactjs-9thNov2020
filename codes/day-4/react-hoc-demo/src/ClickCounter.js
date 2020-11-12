@@ -1,6 +1,7 @@
 import React from 'react'
 //import PropTypes from 'prop-types'
 import withCounter from './withCounter'
+import withErrorBoundary from './withErrorBoundary';
 
 function OriginalClickCounter({ countValue, countHandlerFn, data }) {
     return (
@@ -18,6 +19,6 @@ function OriginalClickCounter({ countValue, countHandlerFn, data }) {
 //     count: PropTypes.number.isRequired,
 //     countHandler: PropTypes.func.isRequired
 // }
-const ClickCounter = withCounter(OriginalClickCounter, 10);
+const ClickCounter = withErrorBoundary(withCounter(OriginalClickCounter, 10));
 export default ClickCounter;
 
