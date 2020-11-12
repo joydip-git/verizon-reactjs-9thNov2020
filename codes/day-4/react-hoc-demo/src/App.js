@@ -1,7 +1,6 @@
 //import { Component } from 'react';
 import './App.css';
 import ClickCounter from './ClickCounter';
-import Counter from './Counter';
 import Hero from './Hero';
 import HoverCounter from './HoverCounter';
 /*
