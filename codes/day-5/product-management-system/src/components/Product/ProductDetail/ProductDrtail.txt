@@ -1,0 +1,29 @@
+import React from 'react'
+import { Redirect, useHistory, useLocation, useParams } from 'react-router-dom'
+
+// const ProductDetail = (props) => {
+const ProductDetail = () => {
+    //console.log(props)
+    // const { history, match } = props;
+    // const {params} = props.match
+    // const id = parseInt(match.params.id)
+    // console.log(id)
+    const history = useHistory();
+    const params = useParams();
+    //const location = useLocation();
+    const id = parseInt(params.id)
+    console.log(id)
+    return (
+        <div>
+            Product Detail
+            <br />
+            <button
+                className='btn btn-primary'
+                onClick={() => history.push('/products')}>
+                Back To Products
+            </button>
+        </div>
+    )
+}
+
+export default ProductDetail
