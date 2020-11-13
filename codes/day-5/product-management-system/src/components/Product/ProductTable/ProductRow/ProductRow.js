@@ -6,7 +6,7 @@ const ProductRow = ({ product, deleteHandler }) => {
     return (
         <tr>
             <td>
-                <a href={`/products/${product.productId}`}>
+                <a href={`/product/${product.productId}`}>
                     <img
                         src={product.imageUrl}
                         alt='NA'

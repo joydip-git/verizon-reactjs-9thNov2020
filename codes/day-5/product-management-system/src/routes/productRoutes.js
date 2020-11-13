@@ -23,22 +23,23 @@ export const productRoutes = [
     },
     {
         id: 4,
-        componentName: ProductDetail,
-        url: '/products/:id'
-    },
-    {
-        id: 5,
         componentName: AddProduct,
         url: '/product/add'
     },
     {
-        id: 6,
+        id: 5,
         componentName: UpdateProduct,
         url: '/product/update/:id'
+    },
+    {
+        id: 6,
+        componentName: ProductDetail,
+        url: '/product/:id'
     },
     {
         id: 7,
         componentName: PageNotFound,
         url: '*'
-    }
+    },
+    
 ]
