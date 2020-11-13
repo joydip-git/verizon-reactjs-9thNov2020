@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import productStore from './redux/store/productStore'
 
 ReactDOM.render(
-  <Provider store={productStore}>
+  <Provider store={productStore}>  
     <App />
   </Provider>,
   document.getElementById('root')
