@@ -5,6 +5,7 @@ import App from './containers/App/App';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Provider } from 'react-redux'
 import productStore from './redux/store/productStore'
+import Sample from './Sample';
 
 ReactDOM.render(
   <Provider store={productStore}>  
@@ -12,3 +13,9 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+// ReactDOM.render(
+//   <Provider store={productStore}>
+//     <Sample />
+//   </Provider>,
+//   document.getElementById('root')
+// );

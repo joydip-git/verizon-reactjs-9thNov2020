@@ -1,6 +1,7 @@
 1. class keyword? this keyword?
-2. lifecycle?
-3. HOC/RP
+2. lifecycle? (useEffect)
+3. HOC/RP (custom hook)
+4. state (useState)
 
      HOC							RP
 -------------------------------------------------------------------------------------------------
@@ -33,3 +34,13 @@ componentDidUpdate(){
 useState, useRef, useMemo, useEffect, useReducer,...
 
 useState()
+
+
+
+1. design: material-ui
+2. security: JSW token
+3. redux-async: saga (generators in JS)
+4. form: Formik
+5. mobile: React Native
+6. architecture: React Fiber
+7. server side rendering: Next JS

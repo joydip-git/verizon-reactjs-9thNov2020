@@ -48,5 +48,25 @@
         "price": 35.95,
         "starRating": 4,
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+    },
+    {
+        "productId": 200,
+        "productName": "abcd",
+        "productCode": "abcd",
+        "price": 1000,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png",
+        "starRating": 4,
+        "description": "good",
+        "releaseDate": "1/1/2020"
+    },
+    {
+        "productId": 30,
+        "productName": "xyz",
+        "productCode": "xyz",
+        "price": 100,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png",
+        "starRating": 3,
+        "description": "abcd",
+        "releaseDate": "1/1/2000"
     }
 ]

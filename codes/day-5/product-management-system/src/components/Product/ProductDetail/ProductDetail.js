@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 import { fetchProductByIdAsyncCallbackCreator } from '../../../redux/async-opertions/productAsyncCallbacks'
@@ -14,8 +14,14 @@ const ProductDetail = (props) => {
     const error = useSelector((appState) => appState.getSingleProduct.error)
     const dispatch = useDispatch()
 
-    const callback = fetchProductByIdAsyncCallbackCreator(id)
-    dispatch(callback)
+
+    useEffect(() => {
+        const callback = fetchProductByIdAsyncCallbackCreator(id)
+        dispatch(callback)
+        return () => {
+            console.log('dismounted')
+        }
+    }, [])
 
     let design = null;
     if (loading) {
@@ -27,7 +33,7 @@ const ProductDetail = (props) => {
     } else {
         design = (
             <>
-                <div classNameName='panel panel-primary'>
+                <div className='panel panel-primary'>
                     <div className='panel-heading' style={{ fontSize: 'large' }}>
                         {product.productName}
                         <Link className='btn btn-primary' style={{ width: '80px', float: 'right' }} to={`/product/update/${product.productId}`}>
@@ -60,7 +66,7 @@ const ProductDetail = (props) => {
                                     <div className='col-md-6'>{product.price}</div>
                                 </div>
                                 <div className='row'>
-                                    <div className='col-md-3'>5 Star Rating:</div>
+                                    <div className='col-md-3'>Rating:</div>
                                     <div className='col-md-6'>
                                         {product.starRating}
                                     </div>
@@ -71,7 +77,7 @@ const ProductDetail = (props) => {
                                 <img
                                     className='center-block img-responsive'
                                     style={{ width: '200px', margin: '2px' }}
-                                    src={product.imageUr}
+                                    src={product.imageUrl}
                                     title={product.productName}
                                     alt='NA'
                                 />
@@ -80,7 +86,7 @@ const ProductDetail = (props) => {
                     </div>
 
                     <div className='panel-footer'>
-                        <Link className='btn btn-default' to={'/products'}
+                        <Link className='btn btn-primary' to={'/products'}
                             style={{ width: '80px' }}>
                             <i className='glyphicon glyphicon-chevron-left'></i>
                             Back
