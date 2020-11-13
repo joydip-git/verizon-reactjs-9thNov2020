@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import ClickCounter from './ClickCounter';
 import HoverCounter from './HoverCounter';
+import Parent from './Parent';
 
 function App() {
 
@@ -34,10 +35,11 @@ function App() {
       Data:&nbsp;{dataState}
       <br />
       <button onClick={increaseCount}>Increase</button> */}
-      <ClickCounter />
+      {/* <ClickCounter />
       <br />
       <br />
-      <HoverCounter />
+      <HoverCounter /> */}
+      <Parent />
     </div>
   );
 }
