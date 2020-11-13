@@ -13,7 +13,8 @@ const RouteGenerator = () => {
 
                 })
             }
-        </Switch>)
+        </Switch>
+    )
 }
 
 export default RouteGenerator

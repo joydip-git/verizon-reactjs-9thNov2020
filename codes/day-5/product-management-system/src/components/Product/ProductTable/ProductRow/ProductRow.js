@@ -1,23 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './ProductRow.css'
+import { Link, NavLink } from 'react-router-dom'
 
 const ProductRow = ({ product, deleteHandler }) => {
     return (
         <tr>
             <td>
-                <a href={`/product/${product.productId}`}>
+                <Link to={`/product/${product.productId}`}>
                     <img
                         src={product.imageUrl}
                         alt='NA'
                         title={product.productName}
                     />
-                </a>
+                </Link>
             </td>
             <td>
-                <a href={`/product/update/${product.productId}`}>
+                <NavLink to={`/product/update/${product.productId}`}>
                     {product.productName}
-                </a>
+                </NavLink>
             </td>
             <td>{product.productCode}</td>
             <td>{product.price}</td>

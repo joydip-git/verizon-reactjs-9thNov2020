@@ -1,17 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const DashBoard = () => {
     return (
         <nav className='navbar navbar-default'>
-            <a href='/home'>
+            <Link to='/home'>
                 Home
-            </a>
-            <a href='/products'>
+            </Link>
+            <Link to='/products'>
                 Products
-            </a>
-            <a href='/product/add'>
+            </Link>
+            <Link to='/product/add'>
                 Add
-            </a>
+            </Link>
         </nav>
     )
 }
