@@ -1,0 +1,151 @@
+<div class="panel panel-primary">
+  <div class="panel panel-heading">
+    {{pageTitle}}
+  </div>
+  <div class="panel panel-body">
+    <div class="row">
+      <div class="col-md-2">
+        Filter By:
+      </div>
+      <div class="col-md-4">
+        <input type="text" [(ngModel)]="filterText" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Filtered By:{{ filterText }} </h3>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <!-- if products property is not null and there are objects in the products array,
+        then only the table will be displayed-->
+      <table class="table" *ngIf="products && products.length">
+        <thead style="background-color: burlywood">
+          <tr>
+            <th>
+              <button class="btn btn-primary" (click)="showImage()">
+                {{ imgShow? 'Hide':'Show'}} Image
+              </button>
+            </th>
+            <th>Product</th>
+            <th>Code</th>
+            <th>Available</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products|productFilter:filterText">
+            <td>
+              <!--<img  [src]="product.imageUrl" [title]='product.productName'
+                        [style.width.px]="imageWidth"
+                        [style.margin.px]="imageMargin" >-->
+
+              <!--<img [src]="product.imageUrl" [title]='product.productName' class="prodSize"  >-->
+
+              <!--<img [src]="product.imageUrl" [title]='product.productName'
+                       [ngClass]="{'prodSize':applyStyle}" >-->
+
+              <!-- <div class="img-responsive" *ngIf="imgShow">
+                <img [src]="product.imageUrl" alt="" [title]="product.productName" [ngStyle]="{'margin':applyStyle===true?'2px':'0px'} && {'width':applyStyle===true?'50px':'0px'}"
+                (click)="onSelect(product)">
+              </div> -->
+
+              <div class="img-responsive" *ngIf="imgShow;else noImage">
+                <img [src]="product.imageUrl" alt="" [title]="product.productName" [ngStyle]="{'margin':applyStyle===true?'2px':'0px'} && {'width':applyStyle===true?'50px':'0px'}"
+                  [routerLink]="['/product',product.productId]">
+              </div>
+              <ng-template #noImage>
+                <p class="text-danger"> Click the button to view image </p>
+              </ng-template>
+            </td>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.productCode|lowercase }}</td>
+            <td>{{ product.releaseDate }}</td>
+            <!-- v4 -->
+            <!-- <td>{{ product.price|currency:'USD':true:'1.2-2' }}</td> -->
+            <!-- v5 -->
+            <!-- USD23.45-->
+            <!-- <td>{{ product.price|currency:'USD':'code':'1.2-2' }}</td> -->
+            <!-- $23.45-->
+
+            <td>
+              {{ product.price|currency:'USD':'symbol':'1.2-2' }}</td>
+
+            <!-- <td>{{ product.starRating }}</td> -->
+            <td>
+              <app-star [rating]='product.starRating' (ratingClick)="updateProductRating(product.productId,$event)"></app-star>
+            </td>
+            <td>
+            <button class="btn btn-danger" (click)="deleteProduct(product.productId)">
+              Delete
+            </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+
+<div class='panel panel-primary' *ngIf='product'>
+  <div class='panel-heading' style='font-size:large'>
+    {{pageTitle + ': ' + product.productName }}
+    <a class='btn btn-primary' style='width:80px;float:right'>
+        Edit
+      </a>
+  </div>
+
+  <div class='panel-body'>
+    <div class='row'>
+      <div class='col-md-6'>
+        <div class='row'>
+          <div class='col-md-3'>Name:</div>
+          <div class='col-md-6'>{{product.productName}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-3'>Code:</div>
+          <div class='col-md-6'>{{product.productCode}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-3'>Description:</div>
+          <div class='col-md-6'>{{product.description}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-3'>Availability:</div>
+          <div class='col-md-6'>{{product.releaseDate}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-3'>Price:</div>
+          <!-- v4 -->
+          <!-- <div class='col-md-6'>{{product.price|currency:'USD':true}}</div> -->
+
+          <!-- v5 -->
+          <!-- <div class='col-md-6'>{{product.price|currency:'USD':'code'}}</div> -->
+          <div class='col-md-6'>{{product.price|currency:'USD':'symbol'}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-3'>5 Star Rating:</div>
+          <div class='col-md-6'>
+            <app-star [rating]='product.starRating'></app-star>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <img class='center-block img-responsive' [style.width.px]='200' [style.margin.px]='2' [src]='product.imageUrl' [title]='product.productName'>
+      </div>
+    </div>
+  </div>
+
+  <div class='panel-footer'>
+    <a class='btn btn-default' (click)='goBack()' style='width:80px'>
+      <i class='glyphicon glyphicon-chevron-left'></i> Back
+    </a>
+  </div>
+</div>
