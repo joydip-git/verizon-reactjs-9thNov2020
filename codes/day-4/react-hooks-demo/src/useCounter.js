@@ -1,8 +1,8 @@
 import { useState } from "react"
 
-const useCounter = () => {
+const useCounter = (initialState) => {
 
-    const [countState, setCountState] = useState(0);
+    const [countState, setCountState] = useState(initialState);
 
     const increaseCount = () => {
         setCountState(ps => ps + 1);

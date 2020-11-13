@@ -2,11 +2,11 @@ import React from 'react'
 import useCounter from './useCounter'
 
 const HoverCounter = () => {
-    const [counter, setCounter] = useCounter();
+    const [counter, setCounter] = useCounter(20);
     return (
         <div>
             Count: &nbsp;{counter}
-            <br/>
+            <br />
             <div onMouseOver={setCounter}>
                 Increase
             </div>

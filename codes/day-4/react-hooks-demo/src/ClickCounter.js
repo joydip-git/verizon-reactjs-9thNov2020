@@ -2,7 +2,7 @@ import React from 'react'
 import useCounter from './useCounter'
 
 const ClickCounter = () => {
-    const [counter, setCounter] = useCounter();
+    const [counter, setCounter] = useCounter(10)
     return (
         <div>
             Count: &nbsp;{counter}
