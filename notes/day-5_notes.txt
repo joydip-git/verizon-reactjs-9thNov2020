@@ -1,0 +1,35 @@
+1. class keyword? this keyword?
+2. lifecycle?
+3. HOC/RP
+
+     HOC							RP
+-------------------------------------------------------------------------------------------------
+a. extra object						a. extra object
+b. main component gets nested				b. no
+c. we get a class component back			c. we retain the original component
+d. event overlapping					d. no chance
+e. forward ref issue					e. no
+f. error handling					f. no error handling
+
+
+const app = (props, ref)=>{}
+export default forwardRef(hoc(app));
+
+<app ref={}/>
+
+class app {}
+export default hoc(app)
+
+<app ref = {}/>
+
+componentDidUpdate(){
+  fetchData()-->state change
+  apply style()
+  calculate scroll position
+  reset the mouse posn
+  unsubscribing
+}
+
+useState, useRef, useMemo, useEffect, useReducer,...
+
+useState()

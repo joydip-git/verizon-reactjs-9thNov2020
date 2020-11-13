@@ -1,11 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { fetchProductByIdAsyncCallbackCreator } from '../../../redux/async-opertions/productAsyncCallbacks'
 
 const ProductDetail = (props) => {
 
-    const history = useHistory();
+    //const history = useHistory();
     const params = useParams();
     const id = parseInt(params.id)
 
@@ -27,15 +27,68 @@ const ProductDetail = (props) => {
     } else {
         design = (
             <>
-                Name:&nbsp;<span>{product.productName}</span>
-                <br />
-                <button
-                    className='btn btn-primary'
-                    onClick={() => history.push('/products')}>
-                    Back To Products
-                </button>
+                <div classNameName='panel panel-primary'>
+                    <div className='panel-heading' style={{ fontSize: 'large' }}>
+                        {product.productName}
+                        <Link className='btn btn-primary' style={{ width: '80px', float: 'right' }} to={`/product/update/${product.productId}`}>
+                            Edit
+                        </Link>
+                    </div>
+
+                    <div className='panel-body'>
+                        <div className='row'>
+                            <div className='col-md-6'>
+                                <div className='row'>
+                                    <div className='col-md-3'>Name:</div>
+                                    <div className='col-md-6'>{product.productName}</div>
+                                </div>
+                                <div className='row'>
+                                    <div className='col-md-3'>Code:</div>
+                                    <div className='col-md-6'>{product.productCode}</div>
+                                </div>
+                                <div className='row'>
+                                    <div className='col-md-3'>Description:</div>
+                                    <div className='col-md-6'>{product.description}</div>
+                                </div>
+                                <div className='row'>
+                                    <div className='col-md-3'>Availability:</div>
+                                    <div className='col-md-6'>{product.releaseDate}</div>
+                                </div>
+                                <div className='row'>
+                                    <div className='col-md-3'>Price:</div>
+
+                                    <div className='col-md-6'>{product.price}</div>
+                                </div>
+                                <div className='row'>
+                                    <div className='col-md-3'>5 Star Rating:</div>
+                                    <div className='col-md-6'>
+                                        {product.starRating}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='col-md-6'>
+                                <img
+                                    className='center-block img-responsive'
+                                    style={{ width: '200px', margin: '2px' }}
+                                    src={product.imageUr}
+                                    title={product.productName}
+                                    alt='NA'
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='panel-footer'>
+                        <Link className='btn btn-default' to={'/products'}
+                            style={{ width: '80px' }}>
+                            <i className='glyphicon glyphicon-chevron-left'></i>
+                            Back
+                        </Link>
+                    </div>
+                </div>
             </>
-        )
+        );
     }
     return design;
 }
