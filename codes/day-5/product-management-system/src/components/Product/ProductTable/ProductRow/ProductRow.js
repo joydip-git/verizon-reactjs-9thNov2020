@@ -6,7 +6,7 @@ const ProductRow = ({ product, deleteHandler }) => {
     return (
         <tr>
             <td>
-                <a href="#">
+                <a href={`/products/${product.productId}`}>
                     <img
                         src={product.imageUrl}
                         alt='NA'
@@ -15,7 +15,7 @@ const ProductRow = ({ product, deleteHandler }) => {
                 </a>
             </td>
             <td>
-                <a href="#">
+                <a href={`/product/update/${product.productId}`}>
                     {product.productName}
                 </a>
             </td>
@@ -25,7 +25,7 @@ const ProductRow = ({ product, deleteHandler }) => {
             <td>
                 <button className='btn btn-danger' onClick={() => deleteHandler(product.productId)}>Delete</button>
             </td>
-        </tr>
+        </tr >
     )
 }
 

@@ -3,13 +3,13 @@ import React from 'react'
 const DashBoard = () => {
     return (
         <nav className='navbar navbar-default'>
-            <a href='#'>
+            <a href='/home'>
                 Home
             </a>
-            <a href='#'>
+            <a href='/products'>
                 Products
             </a>
-            <a href='#'>
+            <a href='/product/add'>
                 Add
             </a>
         </nav>

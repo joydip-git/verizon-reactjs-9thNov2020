@@ -24,17 +24,17 @@ export const productRoutes = [
     {
         id: 4,
         componentName: ProductDetail,
-        url: '/products/view/:id'
+        url: '/products/:id'
     },
     {
         id: 5,
         componentName: AddProduct,
-        url: '/products/add'
+        url: '/product/add'
     },
     {
         id: 6,
         componentName: UpdateProduct,
-        url: '/products/update/:id'
+        url: '/product/update/:id'
     },
     {
         id: 7,
